@@ -17,7 +17,7 @@ app.set('view engine', 'hbs');
 hbs.registerHelper('getCurrentYear', () => {
   return new Date().getFullYear();
 });
-hbs.registerHelper('screamIt', (text)  =>{
+hbs.registerHelper('capitalText', (text)  =>{
   return text.toUpperCase();
 });
 
@@ -48,7 +48,7 @@ app.use(express.static(__dirname + '/public'));
 
 // http route handlers
 // takes url and function parameters
-app.get('/', (request, response) => {
+app.get('/', (req, res) => {
   // response.send('<h1>Hello World</h1>');
   // response.send({
   //   name: 'Bongani',
@@ -59,9 +59,8 @@ app.get('/', (request, response) => {
   // });
 
   // challenge from course
-  response.render('home.hbs', {
-    pageTitle: 'Welcome to NodeJS Home',
-    homeHeader: 'Home',
+  res.render('home.hbs', {
+    pageTitle: 'Home',
     content: 'Here is the welcome page using HBS templating'
   })
 });
@@ -72,8 +71,17 @@ app.get('/about', (req,res) => {
   //res.render('about.hbs');
   // you can pass data to the hbs file to make it dynamic
   res.render('about.hbs', {
-    pageTitle: 'About Page'
+    pageTitle: 'About',
+    content: 'Here you will find secrets about me'
     // currentYear: new Date().getFullYear()
+  });
+});
+
+// create project route
+app.get('/project', (req, res) => {
+  res.render('project.hbs',{
+    pageTitle: 'Project',
+    content: 'I am learning NodeJS and Express'
   });
 });
 

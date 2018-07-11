@@ -1,0 +1,75 @@
+*,*::before,*::after{
+  box-sizing: border-box;
+}
+html,body{
+  margin : 0;
+  padding: 0;
+  background-color: #eee;
+  font-size: 1.5em;
+  font-family: monospace;
+}
+div, p, header, footer,nav, li, u{
+  padding: 0;
+}
+.container{
+  display: block;
+  margin-top: 1%;
+  width: 95%;
+  margin: 0 auto;
+  background-color: #fff;
+}
+header{
+  display: block;
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5));
+  border-radius: 4px;
+}
+h1::before,h1::after{
+  clear: both;
+}
+nav::before,nav::after{
+  clear: both;
+}
+h1{
+  width: 50%;
+  height: 100px;
+  line-height: 100px;
+  color: #fff;
+  margin-top: 0;
+  padding-left: 10%;
+  float: left;
+}
+nav{
+  width: 50%;
+  float: right;
+  margin-top: 0;
+  height: 100px;
+}
+nav li {
+  display: inline;
+  list-style-type: none;
+  padding: 2%;
+}
+nav li a{
+  color: #fff;
+  text-decoration: none;
+}
+nav li a:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+footer{
+  position: fixed;
+  display: block;
+  bottom: 0;
+  width: 95%;
+  color: #fff;
+  background: linear-gradient(to bottom, rgba(0,0,0,1), rgba(0,0,0,0.5));
+}
+
+footer p{
+  display: block;
+  text-align: center;
+}

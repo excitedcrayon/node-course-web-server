@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{homeTitle}}</title>
-  </head>
-  <body>
-  <!-- calling a partial hbs footer file-->
-    {{> header}}
-  <p>{{screamIt content}}</p>
-
-  <!-- calling a partial hbs footer file-->
-  {{> footer}}
-  </body>
-</html>
+<!-- calling a partial hbs footer file-->
+{{> header}}
+<!-- content -->
+<p>{{content}}</p>
+<!-- calling a partial hbs footer file-->
+{{> footer}}

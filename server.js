@@ -2,6 +2,10 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+// dynamic port for deploying to Heroku
+// so port will be either set to environment or 3000 if the former
+// if not found
+var port  = process.env.PORT || 3000;
 var app = express();
 // creating partials for HBS
 hbs.registerPartials(__dirname + '/views/partials');
@@ -35,9 +39,10 @@ app.use((req,res,next) => {
 });
 
 // express middleware that laads the maintance hbs template
-app.use((req, res, next) => {
-  res.render('maintenance.hbs');
-});
+// uncomment the next three line is you wish you display maintance page
+// app.use((req, res, next) => {
+//   res.render('maintenance.hbs');
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -80,6 +85,6 @@ app.get('/bad', (req, res) => {
 });
 
 // common dev port
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log('Server is running on port 3000');
 });
